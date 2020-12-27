@@ -41,7 +41,7 @@ before_install:
   # - docker run -it -v $(pwd):/app ruby:2.4 sh
 
 script:
-  - docker run shchepinsky/react-test npm run -e CI=true test -- --coverage
+  - docker run -e CI=true shchepinsky/react-test npm run test -- --coverage
 
 deploy:
   # travis has no Kubernetes provider built in, so we provide a custom script
