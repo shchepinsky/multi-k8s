@@ -1,6 +1,6 @@
 sudo: required
 # set ubuntu version
-dist: bionic
+dist: focal
 # required services
 services:
   - docker
