@@ -1,17 +1,13 @@
 sudo: required
-# set ubuntu version
+# to avoid issue:
+# https://github.com/kubernetes/kubernetes/issues/90077#issuecomment-718778960
+# it set ubuntu version to be 20.04.1 LTS that
+# includes docker kubernetes 19
 dist: focal
+
 # required services
 services:
   - docker
-addons:
-  # update docker
-  # https://docs.travis-ci.com/user/docker/#installing-a-newer-docker-version
-  # to avoid issue:
-  # https://github.com/kubernetes/kubernetes/issues/90077#issuecomment-718778960
-  apt:
-    packages:
-      - docker-ce
 env:
   global:
     # get SHA code for current head (master) and set it as env var
