@@ -1,4 +1,6 @@
 sudo: required
+# set ubuntu version
+dist: bionic
 # required services
 services:
   - docker
