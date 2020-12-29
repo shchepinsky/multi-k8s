@@ -14,7 +14,7 @@ env:
     - SHA=$(git rev-parse HEAD)
     # gcloud cli silent mode - disable prompts that require user input
     - CLOUDSDK_CORE_DISABLE_PROMPTS=1
-before_install:
+install:
   # decrypt service-account.json on travis server for gcloud
   - openssl aes-256-cbc -K $encrypted_9f3b5599b056_key -iv $encrypted_9f3b5599b056_iv -in service-account.json.enc -out service-account.json -d
 
@@ -23,7 +23,11 @@ before_install:
   - source $HOME/google-cloud-sdk/path.bash.inc
 
   # install kubernetes in the google cloud
-  - gcloud components update kubectl
+  - gcloud components list
+  - gcloud components install kubectl
+  - gcloud components list
+  - kubectl version
+
 
   # tell google cloud who we are
   # service account is equivalent of IAM user in AWS
