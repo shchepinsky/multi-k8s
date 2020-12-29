@@ -24,9 +24,7 @@ install:
 
   # install kubernetes in the google cloud
   - gcloud components update kubectl
-  - gcloud components update
   - gcloud components list
-  - kubectl version --client
 
 
   # tell google cloud who we are
