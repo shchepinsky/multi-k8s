@@ -23,10 +23,10 @@ install:
   - source $HOME/google-cloud-sdk/path.bash.inc
 
   # install kubernetes in the google cloud
+  - gcloud components update kubectl
+  - gcloud components update
   - gcloud components list
-  - gcloud components install kubectl
-  - gcloud components list
-  - kubectl version
+  - kubectl version --client
 
 
   # tell google cloud who we are
