@@ -8,7 +8,7 @@ function App() {
       <div>
         <header>
           <div>{process.env.NODE_ENV}</div>
-          <h1>FIB calculator v2</h1>
+          <h1>FIB calculator KUBERNETES</h1>
           <Link to="/">Home</Link>
           <Link to="/otherpage">Other Page</Link>
         </header>
